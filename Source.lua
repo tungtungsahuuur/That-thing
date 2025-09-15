@@ -143,6 +143,7 @@ local function CreateNovaTerminal()
 		listLayout.Name = "MessageLayout"
 		listLayout.Parent = self._outputFrame
 		listLayout.Padding = UDim.new(0, 5)
+		listLayout.SortOrder = Enum.SortOrder.LayoutOrder
 		
 		local framePadding = Instance.new("UIPadding")
 		framePadding.Name = "ViewPadding"
@@ -294,6 +295,7 @@ local function CreateNovaTerminal()
 		messageFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		messageFrame.BackgroundTransparency = 1
 		messageFrame.AutomaticSize = Enum.AutomaticSize.Y
+		messageFrame.LayoutOrder = self._messageIndex -- This ensures proper ordering
 
 		local textElement = Instance.new("TextLabel")
 		textElement.Name = "Content"
